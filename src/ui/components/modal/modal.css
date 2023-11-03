@@ -1,0 +1,69 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  z-index: var(--z-index-modal);
+
+  &-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.01);
+    backdrop-filter: blur(5px);
+  }
+
+  &-content {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background: var(--neutral-white);
+    box-shadow: var(--shadow-2);
+
+    @mixin tablet {
+      max-width: 768px;
+    }
+  }
+
+  &-close {
+    @extend .caption-medium;
+
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    padding: 16px;
+
+    background: none;
+    border: none;
+    text-transform: uppercase;
+
+    color: var(--neutral-darkest);
+
+    cursor: pointer;
+    transition: color var(--transition-hover);
+
+    &:hover {
+      color: var(--neutral-mid-dark);
+      text-decoration: underline;
+    }
+
+    &.is-secondary {
+      color: var(--neutral-white);
+
+      &:hover {
+        color: var(--neutral-lightest);
+      }
+    }
+  }
+}

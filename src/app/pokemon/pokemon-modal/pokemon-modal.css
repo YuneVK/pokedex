@@ -1,0 +1,75 @@
+.pokemonModal {
+  &-header {
+    background: linear-gradient(to bottom, var(--color), var(--neutral-white));
+  }
+
+  &-id {
+    @extend .caption-large;
+
+    position: absolute;
+    top: 24px;
+    right: 52px;
+
+    color: var(--neutral-white);
+  }
+
+  &-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
+
+    image-rendering: pixelated;
+    object-fit: contain;
+
+    transform: translateY(10%) scale(1.2);
+    pointer-events: none;
+  }
+
+  &-body {
+    padding: 32px 20px;
+
+    @mixin tablet {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @mixin desktop {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+
+  &-types {
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+  }
+
+  &-name {
+    @extend .heading-large;
+
+    margin: 16px auto 32px;
+
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &-sectionTitle {
+    @extend .heading-small;
+
+    margin-bottom: 16px;
+  }
+
+  &-gamesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 16px;
+  }
+
+  &-game {
+    @extend .caption-medium;
+
+    color: var(--neutral-dark);
+    text-transform: uppercase;
+  }
+}

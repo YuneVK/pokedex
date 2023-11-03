@@ -1,3 +1,7 @@
 {
-  "title:site": "Site"
+  "title:site": "Site",
+
+  "noun:games": "Games",
+
+  "actions:close": "Close"
 }

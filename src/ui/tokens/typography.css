@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500&family=Martian+Mono&display=swap");
 
 :root {
   --font-family: "Inter", sans-serif;
+  --font-family-monospace: "Martian Mono", monospace;
   --font-size-base: 16px;
 }
 
@@ -10,31 +11,18 @@
   font-size: rem(38);
   line-height: 1.2;
   font-weight: 500;
-
-  @mixin desktop {
-    font-size: rem(96);
-    line-height: 1.1;
-  }
 }
 
 .heading-medium {
   font-size: rem(30);
   line-height: 1.2;
   font-weight: 500;
-
-  @mixin desktop {
-    font-size: rem(64);
-  }
 }
 
 .heading-small {
   font-size: rem(24);
   line-height: 1.2;
   font-weight: 500;
-
-  @mixin desktop {
-    font-size: rem(40);
-  }
 }
 
 /* Body text */
@@ -58,15 +46,15 @@
 
 /* Captions */
 .caption-large {
-  font-family: var(--font-family);
-  font-size: rem(16);
+  font-family: var(--font-family-monospace);
+  font-size: rem(20);
   line-height: 1.8;
   font-weight: 500;
   letter-spacing: normal;
 }
 
 .caption-medium {
-  font-family: var(--font-family);
+  font-family: var(--font-family-monospace);
   font-size: rem(14);
   line-height: 1.8;
   font-weight: 400;
@@ -74,8 +62,8 @@
 }
 
 .caption-small {
-  font-family: var(--font-family);
-  font-size: rem(12);
+  font-family: var(--font-family-monospace);
+  font-size: rem(10);
   line-height: 1.8;
   font-weight: 500;
   letter-spacing: normal;

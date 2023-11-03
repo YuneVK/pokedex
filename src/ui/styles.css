@@ -10,3 +10,15 @@
 @import "./tokens/z-index.css";
 
 @import "./base/base.css";
+
+/* Components */
+@import "./components/modal/modal.css";
+@import "./components/page-layout/page-layout.css";
+
+/* Pokemon */
+@import "../app/pokemon/pokemon-card/pokemon-card.css";
+@import "../app/pokemon/pokemon-list/pokemon-list.css";
+@import "../app/pokemon/pokemon-modal/pokemon-modal.css";
+
+/* Types */
+@import "../app/types/type-chip/type-chip.css";

@@ -3,7 +3,7 @@ import { useCallback } from "react"
 import regionlessEnglish from "./messages/en.json"
 
 const useTranslations = () => {
-  const formatMessage = useCallback((id, values) => {
+  const formatMessage = (id, values) => {
     let template = regionlessEnglish[id]
 
     if (!template) {
@@ -25,7 +25,7 @@ const useTranslations = () => {
     }
 
     return template
-  }, [])
+  }
 
   return { t: formatMessage }
 }

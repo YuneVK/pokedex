@@ -1,0 +1,53 @@
+.pokemonCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  background-color: var(--neutral-white);
+  border: 1px solid var(--neutral-lightest);
+  border-radius: 4px;
+
+  cursor: pointer;
+  transition: box-shadow var(--transition-hover),
+    transform var(--transition-hover);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-1);
+  }
+
+  &-info {
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    row-gap: 4px;
+
+    @mixin tablet {
+      padding: 32px;
+    }
+  }
+
+  &-id {
+    @extend .caption-medium;
+
+    flex-grow: 1;
+  }
+
+  &-name {
+    @extend .heading-small;
+
+    text-transform: capitalize;
+  }
+
+  &-types {
+    display: flex;
+    column-gap: 8px;
+  }
+
+  &-image {
+    image-rendering: pixelated;
+    object-fit: contain;
+  }
+}

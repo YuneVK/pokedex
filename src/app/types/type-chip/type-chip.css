@@ -1,0 +1,13 @@
+.typeChip {
+  @extend .caption-small;
+
+  padding: 2px 8px;
+
+  background-color: var(--color, #a1a1a1);
+  border-radius: 4px;
+
+  color: white;
+
+  text-transform: uppercase;
+  line-height: 1;
+}

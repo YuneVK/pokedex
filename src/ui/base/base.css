@@ -1,6 +1,8 @@
 html {
-  background-color: var(--neutral-white);
+  background-color: var(--neutral-off-white);
   min-height: -webkit-fill-available;
+
+  scrollbar-gutter: stable both-edges;
 }
 
 body {
@@ -9,6 +11,7 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   color: var(--neutral-darkest);
+  overflow-x: hidden;
 }
 
 button,
