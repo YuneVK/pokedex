@@ -1,0 +1,19 @@
+:root {
+  --neutral-white: #fafafa;
+  --neutral-off-white: #f0f0f0;
+
+  --neutral-lightest: #e0e0e0;
+  --neutral-light: #c0c0c0;
+
+  --neutral-mid-light: #a1a1a1;
+  --neutral-mid: #808080;
+
+  --neutral-mid-dark: #666666;
+  --neutral-dark: #4d4d4d;
+
+  --neutral-darkest: #333333;
+  --neutral-overlay: rgba(50, 50, 50, 0.7);
+
+  --neutral-accent-light: #b0a5f0;
+  --neutral-accent-dark: #7868e6;
+}

@@ -1,0 +1,20 @@
+.sectionWrapper {
+  padding: 0 16px;
+
+  @mixin desktop {
+    padding: 0 88px;
+  }
+}
+
+.fullWidth {
+  max-width: 1448px;
+  margin: 0 auto;
+}
+
+.sectionSpacer {
+  margin-bottom: 48px;
+
+  @mixin desktop {
+    margin-bottom: 96px;
+  }
+}

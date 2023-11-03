@@ -1,0 +1,6 @@
+:root {
+  --bezier: cubic-bezier(0.32, 0.94, 0.6, 1);
+
+  --transition-hover: 0.2s var(--bezier);
+  --transition-menu: 0.4s var(--bezier);
+}
