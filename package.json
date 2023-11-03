@@ -9,20 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^18",
-    "postcss": "^8.4.31",
-    "postcss-extend-rule": "^4.0.0",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-import": "^15.1.0",
-    "postcss-mixins": "^9.0.4",
-    "postcss-nested": "^6.0.1",
-    "postcss-preset-env": "^9.3.0",
-    "postcss-simple-vars": "^7.0.1",
-    "react": "^18",
-    "react-dom": "^18"
+    "cssnano": "6.0.1",
+    "next": "14.0.1",
+    "postcss": "8.4.31",
+    "postcss-extend-rule": "4.0.0",
+    "postcss-flexbugs-fixes": "5.0.2",
+    "postcss-import": "15.1.0",
+    "postcss-mixins": "9.0.4",
+    "postcss-nested": "6.0.1",
+    "postcss-pixels-to-rem": "0.8.0",
+    "postcss-preset-env": "9.3.0",
+    "postcss-simple-vars": "7.0.1",
+    "react": "18",
+    "react-dom": "18"
   },
   "devDependencies": {
-    "eslint": "^8",
+    "eslint": "8",
     "eslint-config-next": "14.0.1"
   },
   "engines": {
