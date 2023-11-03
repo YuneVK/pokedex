@@ -2,6 +2,7 @@
   "title:site": "Site",
 
   "noun:games": "Games",
+  "noun:loading": "Loading...",
 
   "actions:close": "Close"
 }

@@ -1,5 +1,14 @@
 .pokemonList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(304px, 1fr));
-  gap: 32px;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(304px, 1fr));
+    gap: 32px;
+  }
+
+  &-loading {
+    @extend .caption-medium;
+
+    margin: 32px 16px;
+    text-align: center;
+  }
 }

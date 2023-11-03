@@ -10,7 +10,7 @@ import PageLayout from "../ui/components/page-layout"
 
 export default async function Home() {
   const { t } = useTranslations()
-  const pokemons = await fetchPokemonList()
+  const pokemons = await fetchPokemonList(1)
 
   return (
     <main>
@@ -18,7 +18,7 @@ export default async function Home() {
 
       <PageLayout
         filters={<div>Filters</div>}
-        list={<PokemonList pokemons={pokemons} />}
+        list={<PokemonList initialData={pokemons} />}
       />
     </main>
   )
