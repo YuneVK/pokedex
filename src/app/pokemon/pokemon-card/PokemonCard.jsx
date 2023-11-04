@@ -1,7 +1,6 @@
 import Image from "next/image"
 
-import TypeChip from "@/app/types/type-chip/index"
-
+import TypeChip from "../type-chip"
 import { formatId } from "../business"
 
 const PokemonCard = ({ pokemon, onClick }) => {

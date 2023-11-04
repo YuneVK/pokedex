@@ -22,7 +22,5 @@
 @import "../app/pokemon/pokemon-card/pokemon-card.css";
 @import "../app/pokemon/pokemon-list/pokemon-list.css";
 @import "../app/pokemon/pokemon-modal/pokemon-modal.css";
+@import "../app/pokemon/type-chip/type-chip.css";
 @import "../app/pokemon/types-filter/types-filter.css";
-
-/* Types */
-@import "../app/types/type-chip/type-chip.css";

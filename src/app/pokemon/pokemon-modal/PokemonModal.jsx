@@ -4,12 +4,10 @@ import { useState, cloneElement } from "react"
 import Image from "next/image"
 
 import useTranslations from "@/i18n/useTranslations"
-
-import TypeChip from "@/app/types/type-chip"
-import TYPE_COLORS from "@/app/types/type-chip/colors"
-
 import Modal from "@/ui/components/modal"
 
+import TypeChip from "../type-chip"
+import TYPE_COLORS from "../type-chip/colors"
 import { formatId } from "../business"
 
 const PokemonModal = ({ pokemon, children }) => {

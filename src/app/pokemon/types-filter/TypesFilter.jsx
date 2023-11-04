@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import Select from "react-select"
 
 import useTranslations from "@/i18n/useTranslations"
-import TYPE_COLORS from "../../types/type-chip/colors"
 
+import TYPE_COLORS from "../type-chip/colors"
 import { fetchTypes } from "../api"
 
 const TypesFilter = ({ onChange }) => {
