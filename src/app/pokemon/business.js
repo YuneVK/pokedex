@@ -12,10 +12,6 @@ export const parsePokemonData = (pokemon) => {
   }
 }
 
-export const formatId = (id) => {
-  return `#${id.toString().padStart(3, "0")}`
-}
+export const formatId = (id) => `#${id.toString().padStart(3, "0")}`
 
-export const parseTypes = (types) => {
-  return types.map((type) => type.name)
-}
+export const parseTypes = (types) => types.map((type) => type.name)
