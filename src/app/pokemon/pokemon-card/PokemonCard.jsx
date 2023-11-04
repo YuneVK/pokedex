@@ -7,8 +7,8 @@ const PokemonCard = ({ pokemon, onClick }) => {
   const formattedId = formatId(pokemon.id)
 
   return (
-    <div className="pokemonCard" onClick={onClick} role="button">
-      <section className="pokemonCard-info">
+    <section className="pokemonCard" onClick={onClick} role="button">
+      <div className="pokemonCard-info">
         <p className="pokemonCard-id">{formattedId}</p>
         <h2 className="pokemonCard-name">{pokemon.name}</h2>
 
@@ -19,7 +19,7 @@ const PokemonCard = ({ pokemon, onClick }) => {
             </li>
           ))}
         </ul>
-      </section>
+      </div>
 
       <Image
         className="pokemonCard-image"
@@ -30,7 +30,7 @@ const PokemonCard = ({ pokemon, onClick }) => {
         unoptimized
         priority={false}
       />
-    </div>
+    </section>
   )
 }
 

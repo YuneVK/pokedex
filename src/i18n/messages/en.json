@@ -2,6 +2,7 @@
   "title:site": "Pokédex",
   "title:footer": "Pokédex © 2023",
 
+  "noun:error": "An error occurred, please try again later.",
   "noun:filter": "Filter",
   "noun:filter-by": "Filter by",
   "noun:games": "Games",

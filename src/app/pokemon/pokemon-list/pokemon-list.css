@@ -36,7 +36,7 @@
     gap: 32px;
   }
 
-  &-empty {
+  &-message {
     @extend .caption-medium;
 
     text-align: center;

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import useSWRInfinite from "swr/infinite"
 
 import useTranslations from "@/i18n/useTranslations"
@@ -25,19 +25,14 @@ const PokemonList = ({ initialData }) => {
 
   const [isVisible, setIsVisible] = useState(false)
 
-  const filterPokemonByType = (pokemonList, selectedTypes) => {
-    if (!selectedTypes.length) {
-      return pokemonList
-    }
-    return pokemonList.filter((pokemon) =>
-      selectedTypes.every((selectedType) =>
-        pokemon.types.includes(selectedType)
-      )
-    )
-  }
-
-  const flatList = Array.isArray(data) ? data.flat() : initialData
-  const filteredPokemonList = filterPokemonByType(flatList, selectedTypes)
+  const filteredPokemonList = useMemo(() => {
+    const flatList = Array.isArray(data) ? data.flat() : initialData
+    return selectedTypes.length
+      ? flatList.filter((pokemon) =>
+          selectedTypes.every((type) => pokemon.types.includes(type))
+        )
+      : flatList
+  }, [data, initialData, selectedTypes])
 
   const handleTypeFilterChange = (e) => {
     const values = e.map((option) => option.value)
@@ -60,6 +55,10 @@ const PokemonList = ({ initialData }) => {
 
       <div className="pokemonList-listContainer">
         <div className="pokemonList-list">
+          {error && (
+            <div className="pokemonList-message">{t("noun:error")}</div>
+          )}
+
           {filteredPokemonList.length ? (
             filteredPokemonList.map((pokemon) => (
               <PokemonModal key={`pokemon-${pokemon.id}`} pokemon={pokemon}>
@@ -67,7 +66,7 @@ const PokemonList = ({ initialData }) => {
               </PokemonModal>
             ))
           ) : (
-            <div className="pokemonList-empty">{t("noun:no-matches")}</div>
+            <div className="pokemonList-message">{t("noun:no-matches")}</div>
           )}
         </div>
 
