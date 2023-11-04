@@ -12,8 +12,10 @@
 @import "./base/base.css";
 
 /* Components */
+@import "./components/button-link/button-link.css";
+@import "./components/footer/footer.css";
+@import "./components/header/header.css";
 @import "./components/modal/modal.css";
-@import "./components/page-layout/page-layout.css";
 
 /* Pokemon */
 @import "../app/pokemon/filters/filters.css";

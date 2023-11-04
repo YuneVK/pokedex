@@ -1,5 +1,6 @@
 {
-  "title:site": "Site",
+  "title:site": "Pokedex",
+  "title:footer": "Pokedex © 2023",
 
   "noun:filter": "Filter",
   "noun:filter-by": "Filter by",
@@ -7,6 +8,8 @@
   "noun:loading": "Loading...",
 
   "actions:close": "Close",
+  "actions:login": "Login",
+  "actions:legal": "Legal terms",
 
   "filters:type:placeholder": "Filter by type"
 }

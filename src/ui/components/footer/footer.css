@@ -1,0 +1,20 @@
+.footer {
+  @extend .sectionWrapper, .caption-small;
+
+  --footer-height: 64px;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: var(--footer-height);
+  background-color: var(--neutral-white);
+  box-shadow: var(--shadow-1);
+
+  z-index: var(--z-index-header);
+  box-sizing: border-box;
+}

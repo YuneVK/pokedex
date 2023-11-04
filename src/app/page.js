@@ -1,12 +1,11 @@
 import useTranslations from "@/i18n/useTranslations"
 import { getJson } from "@/enhancedFetch"
 
-import AppBar from "@/ui/components/app-bar/index"
+import Header from "@/ui/components/header"
+import Footer from "../ui/components/footer"
 
 import { fetchPokemonList } from "./pokemon/api"
 import PokemonList from "./pokemon/pokemon-list"
-
-import PageLayout from "../ui/components/page-layout"
 
 export default async function Home() {
   const { t } = useTranslations()
@@ -14,9 +13,9 @@ export default async function Home() {
 
   return (
     <main>
-      <AppBar />
-
+      <Header />
       <PokemonList initialData={pokemons} />
+      <Footer />
     </main>
   )
 }
