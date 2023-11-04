@@ -1,8 +1,12 @@
 {
   "title:site": "Site",
 
+  "noun:filter": "Filter",
+  "noun:filter-by": "Filter by",
   "noun:games": "Games",
   "noun:loading": "Loading...",
 
-  "actions:close": "Close"
+  "actions:close": "Close",
+
+  "filters:type:placeholder": "Filter by type"
 }

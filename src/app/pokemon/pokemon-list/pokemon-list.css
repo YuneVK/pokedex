@@ -1,8 +1,40 @@
 .pokemonList {
+  @extend .sectionWrapper;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+
+  @mixin tablet {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    column-gap: 40px;
+  }
+
+  @mixin desktop {
+    grid-template-columns: 75% 25%;
+  }
+
+  &-filters {
+    @mixin tablet {
+      grid-column: 2;
+    }
+  }
+
+  &-listContainer {
+    @mixin tablet {
+      grid-row: 1;
+    }
+  }
+
   &-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(304px, 1fr));
     gap: 32px;
+  }
+
+  &-sentinel {
+    height: 50px;
   }
 
   &-loading {

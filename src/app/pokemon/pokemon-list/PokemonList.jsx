@@ -7,84 +7,60 @@ import useTranslations from "@/i18n/useTranslations"
 
 import PokemonCard from "../pokemon-card"
 import PokemonModal from "../pokemon-modal"
+import Filters from "../filters"
+import TypesFilter from "../types-filter"
 
-import { fetchPokemonList } from "../api"
+import { fetchPokemonList, fetchTypes } from "../api"
 
-const fetcher = async (page) => await fetchPokemonList(page)
-
-const getKey = (pageIndex, previousPageData) => {
-  if (previousPageData && !previousPageData.length) return null
-  const page = pageIndex + 1
-  return page
-}
+import usePokemonInfiniteScroll from "../usePokemonInfiniteScroll"
 
 const PokemonList = ({ initialData }) => {
   const { t } = useTranslations()
-  const { data, error, size, setSize, isValidating } = useSWRInfinite(
-    getKey,
-    fetcher,
-    {
-      initialData: [initialData],
-    }
+  const [selectedTypes, setSelectedTypes] = useState([])
+
+  const { data, error, isValidating, sentinelRef } = usePokemonInfiniteScroll(
+    initialData,
+    selectedTypes
   )
 
   const [isVisible, setIsVisible] = useState(false)
 
   const flatList = Array.isArray(data) ? data.flat() : initialData
 
-  const sentinelRef = useRef(null)
-
-  useEffect(() => {
-    if (!isVisible) return
-
-    if (isValidating) {
-      setIsVisible(false)
-      return
-    }
-
-    setSize(size + 1)
-  }, [isValidating, isVisible, setSize, size])
-
-  const observerCallback = (entries) => {
-    const firstEntry = entries[0]
-    if (firstEntry.isIntersecting) {
-      setIsVisible(true)
-    }
+  const handleTypeFilterChange = (e) => {
+    const values = e.map((option) => option.value)
+    setSelectedTypes(values)
   }
 
-  useEffect(() => {
-    const sentinel = sentinelRef.current
-
-    if (!sentinel) return
-
-    const observerOptions = {
-      threshold: 1.0,
-    }
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions)
-
-    observer.observe(sentinel)
-
-    return () => {
-      if (!sentinel) return
-
-      observer.unobserve(sentinel)
-    }
-  }, [])
+  const hasSameTypes = (pokemonTypes) => {
+    return selectedTypes.every((pokemonType) =>
+      pokemonTypes.includes(pokemonType)
+    )
+  }
 
   return (
     <div className="pokemonList">
-      <div className="pokemonList-list">
-        {flatList.map((pokemon) => (
-          <PokemonModal key={`pokemon-${pokemon.id}`} pokemon={pokemon}>
-            <PokemonCard pokemon={pokemon} />
-          </PokemonModal>
-        ))}
+      <div className="pokemonList-filters">
+        <Filters>
+          <TypesFilter onChange={handleTypeFilterChange} />
+        </Filters>
       </div>
-      {isValidating && (
-        <p className="pokemonList-loading">{t("noun:loading")}</p>
-      )}
-      <div ref={sentinelRef}></div>
+
+      <div className="pokemonList-listContainer">
+        <div className="pokemonList-list">
+          {flatList.map((pokemon) =>
+            !selectedTypes.length || hasSameTypes(pokemon.types) ? (
+              <PokemonModal key={`pokemon-${pokemon.id}`} pokemon={pokemon}>
+                <PokemonCard pokemon={pokemon} />
+              </PokemonModal>
+            ) : null
+          )}
+        </div>
+        <div className="pokemonList-sentinel" ref={sentinelRef}></div>
+        {isValidating && (
+          <p className="pokemonList-loading">{t("noun:loading")}</p>
+        )}
+      </div>
     </div>
   )
 }

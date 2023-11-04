@@ -37,6 +37,7 @@ const PokemonModal = ({ pokemon, children }) => {
           className="pokemonModal"
           onClose={handleCloseModal}
           isCloseButtonSecondary
+          isOpen
         >
           <div className="pokemonModal-header" style={{ "--color": color }}>
             <p className="pokemonModal-id">{formattedId}</p>

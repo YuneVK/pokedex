@@ -1,9 +1,10 @@
 import { getJson } from "@/enhancedFetch"
 
-import { parsePokemonData } from "./business"
+import { parsePokemonData, parseTypes } from "./business"
 import { ELEMENTS_PER_PAGE } from "./config"
 
 const PATHNAME = "/pokemon"
+const TYPE_PATHNAME = "/type"
 
 const getPokemonDetail = async (name) => {
   const url = new URL(
@@ -30,4 +31,12 @@ export const fetchPokemonList = async (page = 1) => {
   const pokemonDetails = await Promise.all(detailsPromises)
 
   return pokemonDetails
+}
+
+export const fetchTypes = async () => {
+  const url = new URL(`${process.env.NEXT_PUBLIC_API_BASE_URL}${TYPE_PATHNAME}`)
+
+  const types = await getJson(url.toString())
+
+  return parseTypes(types.results)
 }

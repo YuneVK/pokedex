@@ -16,10 +16,7 @@ export default async function Home() {
     <main>
       <AppBar />
 
-      <PageLayout
-        filters={<div>Filters</div>}
-        list={<PokemonList initialData={pokemons} />}
-      />
+      <PokemonList initialData={pokemons} />
     </main>
   )
 }

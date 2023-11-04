@@ -1,17 +1,18 @@
 import clsx from "clsx"
-import { useLockBodyScroll } from "@uidotdev/usehooks"
 
 import useTranslations from "@/i18n/useTranslations"
+import useLockScroll from "@/hooks/useLockScroll"
 
 const Modal = ({
   children,
   onClose,
   className = "",
   isCloseButtonSecondary,
+  isOpen,
 }) => {
   const { t } = useTranslations()
 
-  useLockBodyScroll()
+  useLockScroll(isOpen)
 
   return (
     <div className={clsx("modal", className)}>
