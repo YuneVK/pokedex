@@ -25,7 +25,19 @@ const PokemonList = ({ initialData }) => {
 
   const [isVisible, setIsVisible] = useState(false)
 
+  const filterPokemonByType = (pokemonList, selectedTypes) => {
+    if (!selectedTypes.length) {
+      return pokemonList
+    }
+    return pokemonList.filter((pokemon) =>
+      selectedTypes.every((selectedType) =>
+        pokemon.types.includes(selectedType)
+      )
+    )
+  }
+
   const flatList = Array.isArray(data) ? data.flat() : initialData
+  const filteredPokemonList = filterPokemonByType(flatList, selectedTypes)
 
   const handleTypeFilterChange = (e) => {
     const values = e.map((option) => option.value)
@@ -48,14 +60,17 @@ const PokemonList = ({ initialData }) => {
 
       <div className="pokemonList-listContainer">
         <div className="pokemonList-list">
-          {flatList.map((pokemon) =>
-            !selectedTypes.length || hasSameTypes(pokemon.types) ? (
+          {filteredPokemonList.length ? (
+            filteredPokemonList.map((pokemon) => (
               <PokemonModal key={`pokemon-${pokemon.id}`} pokemon={pokemon}>
                 <PokemonCard pokemon={pokemon} />
               </PokemonModal>
-            ) : null
+            ))
+          ) : (
+            <div className="pokemonList-empty">{t("noun:no-matches")}</div>
           )}
         </div>
+
         <div className="pokemonList-sentinel" ref={sentinelRef}></div>
         {isValidating && (
           <p className="pokemonList-loading">{t("noun:loading")}</p>

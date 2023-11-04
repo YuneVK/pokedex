@@ -6,6 +6,7 @@
   "noun:filter-by": "Filter by",
   "noun:games": "Games",
   "noun:loading": "Loading...",
+  "noun:no-matches": "No results found, try different filters.",
 
   "actions:close": "Close",
   "actions:login": "Login",

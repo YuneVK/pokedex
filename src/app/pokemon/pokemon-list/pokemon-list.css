@@ -36,6 +36,12 @@
     gap: 32px;
   }
 
+  &-empty {
+    @extend .caption-medium;
+
+    text-align: center;
+  }
+
   &-sentinel {
     height: 50px;
   }
