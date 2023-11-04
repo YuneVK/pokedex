@@ -23,7 +23,7 @@
 
 ## ℹ️ About
 
-This is a Pokédex project made with [Next.js](https://nextjs.org/) and bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Pokédex project made with [Next.js](https://nextjs.org/) and bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). You can view the live app [here](https://pokedex-nextjs-app.vercel.app/).
 
 The Pokédex displays a list of Pokémon with various filtering options.
 
