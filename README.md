@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-# Pokedex Next.js Template
+# Pokédex
 
 **Table of Contents:**
 
@@ -23,9 +23,9 @@
 
 ## ℹ️ About
 
-This is a Pokedex project made with [Next.js](https://nextjs.org/) and bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Pokédex project made with [Next.js](https://nextjs.org/) and bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-The Pokedex displays a list of Pokémon with various filtering options.
+The Pokédex displays a list of Pokémon with various filtering options.
 
 <p align="right"><a href="#readme-top">🔼 back to top</a></p>
 
@@ -73,7 +73,7 @@ Start the development server:
 yarn dev
 ```
 
-Open http://localhost:3000/ in your browser to view the Pokedex.
+Open http://localhost:3000/ in your browser to view the Pokédex.
 
 <p align="right"><a href="#readme-top">🔼 back to top</a></p>
 

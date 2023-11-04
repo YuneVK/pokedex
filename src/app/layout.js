@@ -1,7 +1,7 @@
 import "@/ui/styles.css"
 
 export const metadata = {
-  title: "Pokedex App",
+  title: "Pokédex App",
   description: "Made with Nextjs using PokeAPI",
 }
 
