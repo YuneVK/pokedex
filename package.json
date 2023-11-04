@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@uidotdev/usehooks": "^2.4.1",
     "clsx": "^2.0.0",
     "cssnano": "6.0.1",
     "next": "14.0.1",
