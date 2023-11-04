@@ -1,6 +1,7 @@
 html {
   background-color: var(--neutral-off-white);
   min-height: -webkit-fill-available;
+  scrollbar-gutter: stable;
 }
 
 body {
